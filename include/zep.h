@@ -31,8 +31,6 @@
 #include "../src/tab_window.cpp"
 #include "../src/theme.cpp"
 #include "../src/window.cpp"
-#include "zep/imgui/display_imgui.h"
-#include "zep/imgui/editor_imgui.h"
 #else
 #include "zep/editor.h"
 #include "zep/syntax.h"
