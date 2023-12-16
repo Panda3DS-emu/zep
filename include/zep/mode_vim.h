@@ -3,8 +3,6 @@
 #include "mode.h"
 #include "zep/keymap.h"
 
-class Timer;
-
 namespace Zep
 {
 
