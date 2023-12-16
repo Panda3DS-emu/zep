@@ -169,6 +169,10 @@ void RegisterSyntaxProviders(ZepEditor& editor)
                                                                                                 return std::make_shared<ZepSyntax>(*pBuffer, hlsl_keywords, hlsl_identifiers);
                                                                                             }) });
 
+    editor.RegisterSyntaxFactory({ ".lua" }, SyntaxProvider{ "lua", tSyntaxFactory([](ZepBuffer* pBuffer) {
+                                                                return std::make_shared<ZepSyntax>(*pBuffer, lua_keywords, lua_identifiers);
+                                                            }) });
+
     editor.RegisterSyntaxFactory({ ".cpp", ".cxx", ".hpp", ".h", ".c" }, SyntaxProvider{ "cpp", tSyntaxFactory([](ZepBuffer* pBuffer) {
                                                                                             return std::make_shared<ZepSyntax>(*pBuffer, cpp_keywords, cpp_identifiers);
                                                                                         }) });
@@ -206,7 +210,7 @@ void RegisterSyntaxProviders(ZepEditor& editor)
         SyntaxProvider{ "markdown", tSyntaxFactory([](ZepBuffer* pBuffer) {
                            return std::make_shared<ZepSyntax_Markdown>(*pBuffer, markdown_keywords, markdown_identifiers, ZepSyntaxFlags::CaseInsensitive);
                        }) });
-    
+
     editor.RegisterSyntaxFactory(
         { ".py", ".python" },
         SyntaxProvider{ "python", tSyntaxFactory([](ZepBuffer* pBuffer) {
